@@ -1,4 +1,4 @@
-public class sistema2x2 {
+public class sistemaLineal {
     // Calcula determinante 2x2
     public static double det(double a, double b, double c, double d){
         return a*d - b*c;
