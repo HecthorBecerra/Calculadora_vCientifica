@@ -45,4 +45,11 @@ public class Cuadratica {
         raices[1] = raiz1.conjugado().toString();
         return raices;
     }
+    public void mostrarRaices(double A, double B, double C){
+        if(esCuadratica(A)){
+            determinarTipoSolucion(A, B, C);
+        } else {
+            System.out.println("No es una ecuacion cuadratica");
+        }
+    }
 }
