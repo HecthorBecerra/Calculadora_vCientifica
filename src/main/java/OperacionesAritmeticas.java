@@ -1,76 +1,120 @@
+
 import java.util.Scanner;
 
 public class OperacionesAritmeticas {
 
-    public void realizarOperaciones() {
+    public void ejecutarMenu() {
+        Scanner scanner = new Scanner(System.in);
 
-        try (Scanner scanner = new Scanner(System.in)) {
+        while (true) {
+            imprimirOpciones();
+            try {
+                int opcion = scanner.nextInt();
+
+                if (opcion == 9) {
+                    break;
+                }
+
+                manejarOpcion(opcion, scanner);
+            } catch (Exception e) {
+                System.out.println("Error: Ingrese un número entero válido.");
+                scanner.next(); 
+            }
+        }
+
+        scanner.close();
+    }
+
+    public void imprimirOpciones() {
+        System.out.println("Seleccione la operación que desea realizar:");
+        System.out.println("1. Suma");
+        System.out.println("2. Resta");
+        System.out.println("3. Multiplicación");
+        System.out.println("4. División");
+        System.out.println("5. Determinar mayor");
+        System.out.println("6. Determinar menor");
+        System.out.println("7. Calcular potencia");
+        System.out.println("8. Calcular porcentaje");
+        System.out.println("9. Salir");
+    }
+
+    public void manejarOpcion(int opcion, Scanner scanner) {
+        try {
             double num1 = pedirNumero("Ingrese el primer número: ", scanner);
             double num2 = pedirNumero("Ingrese el segundo número: ", scanner);
+            double resultado;
 
-            double suma = sumar(num1, num2);
-            double resta = restar(num1, num2);
-            double multiplicacion = multiplicar(num1, num2);
-            double division = dividir(num1, num2);
-            double mayor = determinarMayor(num1, num2);
-            double menor = determinarMenor(num1, num2);
-            double potencia = calcularPotencia(num1, num2);
+            switch (opcion) {
+                case 1:
+                    resultado = sumar(num1, num2);
+                    break;
+                case 2:
+                    resultado = restar(num1, num2);
+                    break;
+                case 3:
+                    resultado = multiplicar(num1, num2);
+                    break;
+                case 4:
+                    resultado = dividir(num1, num2);
+                    break;
+                case 5:
+                    resultado = determinarMayor(num1, num2);
+                    break;
+                case 6:
+                    resultado = determinarMenor(num1, num2);
+                    break;
+                case 7:
+                    resultado = calcularPotencia(num1, num2);
+                    break;
+                case 8:
+                    double porcentaje = pedirNumero("Ingrese el porcentaje a calcular: ", scanner);
+                    resultado = calcularPorcentaje(porcentaje, num1);
+                    break;
+                default:
+                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    return;
+            }
 
-            double porcentaje = pedirNumero("Ingrese el porcentaje a calcular de su primer número: ", scanner);
-            double resultadoPorcentaje = calcularPorcentaje(porcentaje, num1);
-
-            imprimirResultados(suma, resta, multiplicacion, division, mayor, menor, potencia, resultadoPorcentaje);
+            System.out.println("El resultado de la operación es: " + resultado+"\n");
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error, por favor intente de nuevo." + e.getMessage());
+            System.out.println("Ha ocurrido un error, por favor intente de nuevo. " + e.getMessage()+"\n");
         }
     }
 
-
-    private double pedirNumero(String mensaje, Scanner scanner) {
+    public double pedirNumero(String mensaje, Scanner scanner) {
         System.out.println(mensaje);
         return scanner.nextDouble();
     }
 
-    private double sumar(double num1, double num2) {
+    public double sumar(double num1, double num2) {
         return num1 + num2;
     }
 
-    private double restar(double num1, double num2) {
+    public double restar(double num1, double num2) {
         return num1 - num2;
     }
 
-    private double multiplicar(double num1, double num2) {
+    public double multiplicar(double num1, double num2) {
         return num1 * num2;
     }
 
-    private double dividir(double num1, double num2) {
+    public double dividir(double num1, double num2) {
         return num1 / num2;
     }
 
-    private double determinarMayor(double num1, double num2) {
+    public double determinarMayor(double num1, double num2) {
         return Math.max(num1, num2);
     }
 
-    private double determinarMenor(double num1, double num2) {
+    public double determinarMenor(double num1, double num2) {
         return Math.min(num1, num2);
     }
 
-    private double calcularPotencia(double base, double exponente) {
+    public double calcularPotencia(double base, double exponente) {
         return Math.pow(base, exponente);
     }
 
-    private double calcularPorcentaje(double porcentaje, double num) {
+    public double calcularPorcentaje(double porcentaje, double num) {
         return (porcentaje / 100) * num;
-    }
-
-    private void imprimirResultados(double suma, double resta, double multiplicacion, double division, double mayor, double menor, double potencia, double resultadoPorcentaje) {
-        System.out.println("La suma de los números es: " + suma);
-        System.out.println("La resta de los números es: " + resta);
-        System.out.println("La multiplicación de los números es: " + multiplicacion);
-        System.out.println("La división de los números es: " + division);
-        System.out.println("El número mayor es: " + mayor);
-        System.out.println("El número menor es: " + menor);
-        System.out.println("La potencia de los números es: " + potencia);
-        System.out.println("El porcentaje de " + resultadoPorcentaje);
     }
 }
