@@ -18,6 +18,6 @@ public class Complejo {
         return new Complejo(this.getReal(), -this.getImaginario());
     }
     public String toString(){
-        return String.format("%s + %si", this.getReal(), this.getImaginario());
+        return String.format("%.2f + %.2fi", this.getReal(), this.getImaginario());
     }
 }
