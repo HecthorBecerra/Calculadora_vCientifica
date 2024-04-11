@@ -3,24 +3,28 @@ import java.util.Scanner;
 public class OperacionesAritmeticas {
 
     public void realizarOperaciones() {
-        Scanner scanner = new Scanner(System.in);
-        double num1 = pedirNumero("Ingrese el primer número: ", scanner);
-        double num2 = pedirNumero("Ingrese el segundo número: ", scanner);
 
-        double suma = sumar(num1, num2);
-        double resta = restar(num1, num2);
-        double multiplicacion = multiplicar(num1, num2);
-        double division = dividir(num1, num2);
-        double mayor = determinarMayor(num1, num2);
-        double menor = determinarMenor(num1, num2);
-        double potencia = calcularPotencia(num1, num2);
+        try (Scanner scanner = new Scanner(System.in)) {
+            double num1 = pedirNumero("Ingrese el primer número: ", scanner);
+            double num2 = pedirNumero("Ingrese el segundo número: ", scanner);
 
-        double porcentaje = pedirNumero("Ingrese el porcentaje a calcular de su primer número: ", scanner);
-        double resultadoPorcentaje = calcularPorcentaje(porcentaje, num1);
+            double suma = sumar(num1, num2);
+            double resta = restar(num1, num2);
+            double multiplicacion = multiplicar(num1, num2);
+            double division = dividir(num1, num2);
+            double mayor = determinarMayor(num1, num2);
+            double menor = determinarMenor(num1, num2);
+            double potencia = calcularPotencia(num1, num2);
 
-        imprimirResultados(suma, resta, multiplicacion, division, mayor, menor, potencia, resultadoPorcentaje);
-        scanner.close();
+            double porcentaje = pedirNumero("Ingrese el porcentaje a calcular de su primer número: ", scanner);
+            double resultadoPorcentaje = calcularPorcentaje(porcentaje, num1);
+
+            imprimirResultados(suma, resta, multiplicacion, division, mayor, menor, potencia, resultadoPorcentaje);
+        } catch (Exception e) {
+            System.out.println("Ha ocurrido un error, por favor intente de nuevo." + e.getMessage());
+        }
     }
+
 
     private double pedirNumero(String mensaje, Scanner scanner) {
         System.out.println(mensaje);
