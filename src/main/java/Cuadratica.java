@@ -10,4 +10,14 @@ public class Cuadratica {
         raices[1] = (-B - Math.sqrt(discriminante)) / (2 * A);
         return raices;
     }
+    public void determinarTipoSolucion(double A, double B, double C){
+        double discriminante = discriminante(A, B, C);
+        if(discriminante > 0){
+            System.out.println("La ecuacion tiene Raices reales y diferentes");
+        } else if(discriminante == 0){
+            System.out.println("LA ecuacion tiene Raices reales e iguales");
+        } else {
+            System.out.println("La ecuacion tiene Raices complejas");
+        }
+    }
 }
