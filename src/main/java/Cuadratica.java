@@ -16,6 +16,9 @@ public class Cuadratica {
         raices[1] = raices[0];
         return raices;
     }
+    public boolean esCuadratica(double A){
+        return A != 0;
+    }
     public void determinarTipoSolucion(double A, double B, double C){
         double discriminante = discriminante(A, B, C);
         if(discriminante > 0){
