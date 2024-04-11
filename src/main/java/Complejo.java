@@ -14,6 +14,9 @@ public class Complejo {
     public void mostrarComplejo(){
         System.out.printf("%s + %si%n", real, imaginario);
     }
+    public Complejo conjugado(){
+        return new Complejo(this.getReal(), -this.getImaginario());
+    }
     public String toString(){
         return String.format("%s + %si", this.getReal(), this.getImaginario());
     }
