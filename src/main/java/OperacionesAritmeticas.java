@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class OperacionesAritmeticas {
@@ -18,7 +17,7 @@ public class OperacionesAritmeticas {
                 manejarOpcion(opcion, scanner);
             } catch (Exception e) {
                 System.out.println("Error: Ingrese un número entero válido.");
-                scanner.next(); 
+                scanner.next();
             }
         }
 
