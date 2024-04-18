@@ -2,26 +2,22 @@ import java.util.Scanner;
 
 public class OperacionesAritmeticas {
 
-    public void ejecutarMenu() {
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
+    public void ejecutarMenu(Scanner scanner) {
+        int opcion;
+        do {
             imprimirOpciones();
             try {
-                int opcion = scanner.nextInt();
-
+                opcion = scanner.nextInt();
                 if (opcion == 9) {
                     break;
                 }
-
                 manejarOpcion(opcion, scanner);
             } catch (Exception e) {
                 System.out.println("Error: Ingrese un número entero válido.");
                 scanner.next();
+                opcion = 0;
             }
-        }
-
-        scanner.close();
+        } while (opcion != 9);
     }
 
     public void imprimirOpciones() {

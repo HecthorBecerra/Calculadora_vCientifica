@@ -16,4 +16,8 @@ class OperacionesAritmeticasTest {
     @Test
     public void testEntradaDeLetra(){
     }
+
+    @Test
+    void manejarOpcion() {
+    }
 }
