@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class sistemaLineal {
     // Calcula determinante 2x2
     public static double det(double[][] M){
@@ -44,13 +46,44 @@ public class sistemaLineal {
             System.out.println("El sistema no tiene solucion");
     }
 
-    public static void copiarEnmain(double[][] A, double[] B){
-        double detA = det(A);
-        if(detA != 0){
-            double[] soluciones = calcularSoluciones(A, B);
-            imprimirSoluciones(soluciones);
+    public static void calcularSistemaEcuaciones(){
+        double[][] m = pedirSistema();
+        double[][] A = {
+            {m[0][0],m[0][1]},
+            {m[1][0],m[1][1]}
+        };
+        double[] B = {
+            m[0][2],
+            m[1][2]
+        };
+
+        if(det(A) != 0){
+            imprimirSoluciones(calcularSoluciones(A, B));
         }else{
             imprimirCasosExepcional(A, B);
         }
+    }
+
+    public static double[][] pedirSistema(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el valor de a: ");
+        double a = sc.nextDouble();
+        System.out.print("Ingrese el valor de b: ");
+        double b = sc.nextDouble();
+        System.out.print("Ingrese el valor de c: ");
+        double c = sc.nextDouble();
+        System.out.print("Ingrese el valor de d: ");
+        double d = sc.nextDouble();
+        System.out.print("Ingrese el valor de e: ");
+        double e = sc.nextDouble();
+        System.out.print("Ingrese el valor de f: ");
+        double f = sc.nextDouble();
+        sc.close();
+
+        double[][] matrix = {
+            {a,b,c},
+            {d,e,f},
+        };
+        return matrix;
     }
 }
