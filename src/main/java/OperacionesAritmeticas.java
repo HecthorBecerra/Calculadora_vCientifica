@@ -30,7 +30,7 @@ public class OperacionesAritmeticas {
         System.out.println("6. Determinar menor");
         System.out.println("7. Calcular potencia");
         System.out.println("8. Calcular porcentaje");
-        System.out.println("9. Salir");
+        System.out.println("9. Volver al menú principal");
     }
 
     public void manejarOpcion(int opcion, Scanner scanner) {

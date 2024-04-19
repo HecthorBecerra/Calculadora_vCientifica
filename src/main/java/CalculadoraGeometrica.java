@@ -26,7 +26,7 @@ public class CalculadoraGeometrica {
         System.out.println("4. Esfera");
         System.out.println("5. Cubo");
         System.out.println("6. Cono");
-        System.out.println("7. Salir del programa");
+        System.out.println("7. Volver al menú principal");
     }
 
     public void manejarOpcionGeometrica(int opcion, Scanner scanner) {

@@ -22,7 +22,7 @@ public class SistemaLineal {
     }
 
     public static void imprimirSoluciones(double[] sol) {
-        System.out.printf("x = %.4f y = %.4f", sol[0], sol[1]);
+        System.out.printf("x = %.4f y = %.4f\n", sol[0], sol[1]);
     }
 
     public static boolean tieneInfinitas(double[][] A, double[] B){
@@ -41,9 +41,9 @@ public class SistemaLineal {
 
     public static void imprimirCasosExepcional(double[][] A, double[] B){
         if(tieneInfinitas(A, B))
-            System.out.println("El sistema tiene infinitas soluciones");
+            System.out.println("El sistema tiene infinitas soluciones\n");
         else
-            System.out.println("El sistema no tiene solucion");
+            System.out.println("El sistema no tiene solucion\n");
     }
 
     public static void calcularSistemaEcuaciones(){
@@ -66,6 +66,7 @@ public class SistemaLineal {
 
     public static double[][] pedirSistema(){
         
+        System.out.println("ax+by=c\ndx+ey=f\n");
         System.out.print("Ingrese el valor de a: ");
         double a = pedirNumero();
         System.out.print("Ingrese el valor de b: ");

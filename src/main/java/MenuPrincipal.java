@@ -13,7 +13,7 @@ class MenuPrincipal {
             System.out.println("1. Operaciones aritméticas");
             System.out.println("2. Operaciones geométricas");
             System.out.println("3. Calcular sistema lineal 2x2");
-            System.out.println("4. Menu Cris");
+            System.out.println("4. Calcular ecuación cuadrática");
             System.out.println("5. Salir");
 
             try {
@@ -34,7 +34,7 @@ class MenuPrincipal {
                         break;
                     case 4:
                         limpiarPantalla();
-                        //opciones Cris
+                        Cuadratica.calcularCuadratica();
                         break;
                     case 5:
                         limpiarPantalla();
