@@ -33,31 +33,40 @@ public class CalculadoraGeometrica {
         try {
             switch (opcion) {
                 case 1:
+                    MenuPrincipal.limpiarPantalla();
                     calcularCuadrado(scanner);
                     break;
                 case 2:
+                    MenuPrincipal.limpiarPantalla();
                     calcularRectangulo(scanner);
                     break;
                 case 3:
+                    MenuPrincipal.limpiarPantalla();
                     calcularCirculo(scanner);
                     break;
                 case 4:
+                    MenuPrincipal.limpiarPantalla();
                     calcularEsfera(scanner);
                     break;
                 case 5:
+                    MenuPrincipal.limpiarPantalla();
                     calcularCubo(scanner);
                     break;
                 case 6:
+                    MenuPrincipal.limpiarPantalla();
                     calcularCono(scanner);
                     break;
                 case 7:
+                    MenuPrincipal.limpiarPantalla();
                     scanner.close();
                     System.exit(0);
                 default:
+                    MenuPrincipal.limpiarPantalla();
                     System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
                     break;
             }
         } catch (Exception e) {
+            MenuPrincipal.limpiarPantalla();
             System.out.println("Ha ocurrido un error, por favor intente de nuevo. " + e.getMessage());
         }
     }

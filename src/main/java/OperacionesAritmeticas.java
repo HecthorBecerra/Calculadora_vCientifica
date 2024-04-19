@@ -41,27 +41,35 @@ public class OperacionesAritmeticas {
 
             switch (opcion) {
                 case 1:
+                MenuPrincipal.limpiarPantalla();
                     resultado = sumar(num1, num2);
                     break;
                 case 2:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = restar(num1, num2);
                     break;
                 case 3:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = multiplicar(num1, num2);
                     break;
                 case 4:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = dividir(num1, num2);
                     break;
                 case 5:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = determinarMayor(num1, num2);
                     break;
                 case 6:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = determinarMenor(num1, num2);
                     break;
                 case 7:
+                    MenuPrincipal.limpiarPantalla();
                     resultado = calcularPotencia(num1, num2);
                     break;
                 case 8:
+                    MenuPrincipal.limpiarPantalla();
                     double porcentaje = pedirNumero("Ingrese el porcentaje a calcular: ", scanner);
                     resultado = calcularPorcentaje(porcentaje, num1);
                     break;
