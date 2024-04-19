@@ -38,8 +38,6 @@ class MenuPrincipal {
             }
 
         } while (opcionPrincipal != 3);
-
-
         scanner.close();
     }
 }
